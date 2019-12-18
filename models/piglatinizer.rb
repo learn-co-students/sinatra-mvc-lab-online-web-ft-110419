@@ -1,13 +1,12 @@
 class PigLatinizer 
-  attr_accessor :text 
   
-  def initialize(text)
-    @text = text 
-    transform
+  def piglatinize(text)
+    words = text.split(' ')
+    words.map do |word| 
+      beg = word.scan(/^([^AEIOU|aeiou]+)/).flatten.join
+      end_ = word.scan(/[AEIOU|aeiou]\w+|[AEIOU|aeiou]/).join
+      word.chars[0] =~ /[AEIOU|aeiou]/ ? "#{end_}way" : "#{end_}#{beg}ay"
+    end.join(' ')
   end
   
-  def transform
-    vowels = %w(a e i o u)
-    binding.pry
-  end
 end
