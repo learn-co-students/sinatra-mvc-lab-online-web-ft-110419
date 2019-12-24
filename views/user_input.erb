@@ -2,10 +2,15 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>MVC Lab</title>
   </head>
   <body>
     <h1>Pig Latinizer</h1>
-  
+    <h2>What would you like to convert?</h2>
+    <form method='POST' action='/'>
+      <p>To pig latin: <input type='text' name='text'></p>
+      <input type='submit' id='Submit'>
+    </form>
+    <h2><%= @parsed_latin %></h2>
   </body>
 </html>
