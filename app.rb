@@ -6,9 +6,9 @@ class App < Sinatra::Base
     erb :user_input
   end
 
-  post '/' do
-    pig = PigLatinizer.new(params[:text])
-    @parsed_latin = pig.atinlay.join(" ")
+  post '/piglatinize' do
+    words = PigLatinizer.new
+    @parsed_latin = words.piglatinize(params[:user_phrase])
 
     erb :user_input
   end
