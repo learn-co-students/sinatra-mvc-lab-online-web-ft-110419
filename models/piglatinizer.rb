@@ -6,9 +6,9 @@ class PigLatinizer
       if word.match(/^[aeiouAEIOU]/)
         word + 'way'
       else
-        front = word.match(/^[bcdfghjklmnpqrstvwxyz]+/)
-        piggy = word.split(front.to_s).last
-        piggy << front.to_s + 'ay'
+        front = word.match(/^[bcdfghjklmnpqrstvwxyz]+/i)
+        word.slice!(front.to_s)
+        word << front.to_s + 'ay'
       end
     end.join(" ")
   end
