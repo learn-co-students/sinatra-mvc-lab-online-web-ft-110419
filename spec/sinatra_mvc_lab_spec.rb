@@ -26,7 +26,7 @@ describe "Pig Latinizer App" do
       expect(last_response.body).to include("user_phrase")
     end
 
-  end
+
 
   describe "POST '/piglatinize'" do
     before do
